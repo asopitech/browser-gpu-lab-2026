@@ -1,0 +1,5 @@
+import {
+  "asopitech/moonbit-browser" @lib,
+}
+
+pkgtype(kind: "executable")
