@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three.js WebGPU | Browser GPU Lab 2026</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Browser GPU Lab 2026 / Chapter 4</p>
+        <h1>Three.js の WebGPU レンダラー</h1>
+        <p>立方体・カメラ・ライトの最小シーンを、Three.js が選んだ描画バックエンドで描画します。</p>
+      </header>
+      <p id="status" class="status" aria-live="polite">描画環境を初期化しています…</p>
+      <div id="canvas-host" class="canvas-host" aria-label="回転する立方体の3D描画"></div>
+      <p class="note">WebGPUが使えない環境では、<code>WebGPURenderer</code> がWebGL 2へ自動フォールバックします。WebGL 2も使えない場合はエラーを表示します。</p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

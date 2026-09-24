@@ -10,8 +10,36 @@
       <p class="eyebrow">Browser GPU Lab 2026 / Chapter 2</p>
       <h1>WebGPUで配列を二乗する</h1>
       <p>JavaScriptが入力データ、WGSL関数、実行命令をブラウザへ渡し、GPUで計算します。</p>
+
+      <section aria-labelledby="roles-heading">
+        <h2 id="roles-heading">GPUへ仕事を渡す担当</h2>
+        <dl class="role-list">
+          <div>
+            <dt><code>GPUAdapter</code></dt>
+            <dd>この端末で利用できるGPUの候補です。ブラウザはここから、計算を任せるGPUを選びます。</dd>
+          </div>
+          <div>
+            <dt><code>GPUDevice</code></dt>
+            <dd>選ばれたGPUを操作するための窓口です。バッファ、シェーダー、計算パイプラインを作成します。</dd>
+          </div>
+          <div>
+            <dt><code>GPUQueue</code></dt>
+            <dd>GPUへデータと命令を届ける待ち行列です。入力を書き込み、組み立てた計算を実行へ回します。</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="mapping-heading">
+        <h2 id="mapping-heading">このサンプルの対応関係</h2>
+        <dl class="mapping-list">
+          <div><dt>WGSL関数</dt><dd><code>square</code> が要素ごとに二乗します。</dd></div>
+          <div><dt>入力・出力バッファ</dt><dd>GPUメモリ上で <code>[1, 2, 3, 4]</code> と計算結果を保持します。</dd></div>
+          <div><dt>bind group</dt><dd>WGSLの <code>@binding(0)</code> と <code>@binding(1)</code> へ、それぞれのバッファを結びます。</dd></div>
+          <div><dt>command buffer</dt><dd>「計算して結果を読み戻す」命令をひとまとめにし、<code>GPUQueue</code> へ送ります。</dd></div>
+        </dl>
+      </section>
       <button id="run" type="button">GPUで実行</button>
-      <output id="result" aria-live="polite">実行前</output>
+      <output id="result" aria-live="polite">実行前。WebGPU対応ブラウザで実行してください。</output>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -1,0 +1,19 @@
+{
+  "name": "@browser-gpu-lab/threejs-webgpu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "check": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "three": "0.186.0"
+  },
+  "devDependencies": {
+    "@types/three": "0.186.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3"
+  }
+}
