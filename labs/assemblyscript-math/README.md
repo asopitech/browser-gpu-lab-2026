@@ -1,0 +1,3 @@
+# AssemblyScript Math Lab
+
+AssemblyScriptで数値関数をWASMへコンパイルし、JavaScriptから呼び出すラボです。小型モジュールのサイズと呼び出し境界を確認します。

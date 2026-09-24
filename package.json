@@ -1,0 +1,15 @@
+{
+  "name": "browser-gpu-lab-2026",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runnable WebGPU, WebAssembly, and browser framework labs for Browser GPU 2026.",
+  "packageManager": "pnpm@10.16.1",
+  "scripts": {
+    "dev:webgpu": "pnpm --filter @browser-gpu-lab/webgpu-basics dev",
+    "build": "pnpm -r build",
+    "check": "pnpm -r check"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
