@@ -11,6 +11,7 @@
 | 2026-09-24 | Wasmtime 47.0.3 | macOS arm64 | CPU | `labs/assemblyscript-math` | AssemblyScript生成のCore Wasmを `add(20, 22)` で実行し `42` を確認 |
 | 2026-09-24 | MoonBit CLI / Node.js WASI | macOS | CPU | `labs/moonbit-browser` | WASM 5,079 bytesを生成し、`double(21)` の出力 `42` を確認 |
 | 2026-09-24 | Wasmtime 47.0.3 | macOS arm64 | CPU | `labs/moonbit-browser` | MoonBit生成のWASI Preview 1モジュールを実行し `42` を確認 |
+| 2026-09-24 | Go 1.27 / Wasmtime 47.0.3 | macOS arm64 | CPU | `labs/go-wasm` | 標準GoのWASI Preview 1モジュールを実行し `42` を確認（2,480,138 bytes） |
 | 2026-09-24 | Rust 1.97 / wgpu 30.0.1 | macOS | Apple M3（Metal） | `labs/rust-wgpu` | ネイティブ実行で利用可能バックエンド `Metal` を確認 |
 
 ## 再現手順

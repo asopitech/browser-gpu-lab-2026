@@ -19,3 +19,7 @@ if ! command -v moon >/dev/null 2>&1; then
 fi
 (cd "$repo_root/labs/moonbit-browser" && moon build --target wasm --release)
 wasmtime run "$repo_root/labs/moonbit-browser/_build/wasm/release/build/cmd/main/main.wasm"
+
+echo "== Go / Wasmtime =="
+(cd "$repo_root/labs/go-wasm" && mkdir -p build && GOOS=wasip1 GOARCH=wasm go build -o build/go-wasi.wasm .)
+wasmtime run "$repo_root/labs/go-wasm/build/go-wasi.wasm"
