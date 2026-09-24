@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONNX Runtime Web AI | Browser GPU Lab 2026</title>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Browser GPU Lab 2026 / Chapter 4</p>
+      <h1>小さなONNXモデルをブラウザ推論</h1>
+      <p>公式サンプルのMatMulモデルを取得し、WebGPUを優先して実行します。</p>
+      <dl class="metadata">
+        <div><dt>ライブラリ</dt><dd>ONNX Runtime Web 1.30.0</dd></div>
+        <div><dt>モデル</dt><dd>backend-test:MatMul（120 bytes）</dd></div>
+        <div><dt>入力</dt><dd>3×4 と 4×3 の float32 行列</dd></div>
+      </dl>
+      <button id="run" type="button">モデルを取得して推論</button>
+      <output id="status" aria-live="polite">実行前</output>
+      <pre id="result" aria-live="polite"></pre>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

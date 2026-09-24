@@ -1,0 +1,11 @@
+:root { color: #e9eef8; background: #09111f; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+body { display: grid; min-height: 100vh; margin: 0; place-items: center; }
+main { width: min(48rem, calc(100% - 3rem)); padding: 2.5rem; border: 1px solid #2b3d5f; border-radius: 1rem; background: #101b30; }
+.eyebrow { color: #8fb7ff; font-size: 0.875rem; }
+h1 { margin-block: 0.5rem; }
+.metadata { display: grid; gap: 0.75rem; margin: 1.5rem 0; }
+.metadata div { padding: 0.8rem 1rem; border-left: 3px solid #5279bd; background: #0c1628; }
+dt { font-weight: 700; } dd { margin: 0.35rem 0 0; color: #c7d2e7; }
+button { padding: 0.75rem 1rem; border: 0; border-radius: 0.5rem; background: #77a8ff; color: #07101e; font-weight: 700; cursor: pointer; }
+output, pre { display: block; margin-top: 1.25rem; color: #b9c7df; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+pre { padding: 1rem; border-radius: 0.5rem; background: #0c1628; }
