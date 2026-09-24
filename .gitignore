@@ -4,6 +4,7 @@ dist/
 coverage/
 *.wasm
 *.wasm.map
+*.wat
 target/
 Cargo.lock
 .DS_Store
