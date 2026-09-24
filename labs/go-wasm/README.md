@@ -14,4 +14,11 @@ wasmtime run build/go-wasi.wasm
 
 ## TinyGo
 
-TinyGoはこの環境にCLIがないため未検証です。導入後は、`tinygo build -target wasi -o build/tinygo-wasi.wasm .` を実行し、同じ `wasmtime run` で標準Goとの差を比較します。
+TinyGo 0.42.0とBinaryen 133の公式arm64バイナリを一時導入して検証しました。
+
+```bash
+WASMOPT=/path/to/wasm-opt tinygo build -target wasi -o build/tinygo-wasi.wasm .
+wasmtime run build/tinygo-wasi.wasm
+```
+
+出力は `42`、サイズは **446,399 bytes（約435.94 KiB）** でした。

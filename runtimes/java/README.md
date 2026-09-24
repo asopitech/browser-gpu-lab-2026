@@ -16,4 +16,16 @@ java -cp runtimes/java:/tmp/chicory-runtime.jar:/tmp/chicory-wasm.jar ChicoryAdd
 
 期待する出力は `42` です。2026-09-24にTemurin 21.0.12.1とChicory 1.7.5で実行確認しました。
 
-GraalWasmはGraalVMのPolyglotランタイムが別途必要なため、同じ環境での検証対象には含めていません。
+GraalWasmはGraalVMのPolyglotランタイムが必要です。
+
+## GraalWasm
+
+GraalVM Community 25.4.4.1.1とMaven CentralのPolyglot/Truffle/Wasm jarを使い、同じモジュールを実行します。
+
+```bash
+GRAAL_CP=/tmp/graal-jars/'*'
+/tmp/graalvm/Contents/Home/bin/javac -cp "$GRAAL_CP" runtimes/java/GraalWasmAdd.java
+/tmp/graalvm/Contents/Home/bin/java -cp "runtimes/java:$GRAAL_CP" GraalWasmAdd labs/assemblyscript-math/build/math-core.wasm
+```
+
+期待する出力は `42` です。GraalVM Community 25.4.4.1.1、Polyglot/Truffle 25.3.4.1の組み合わせで検証しました（Polyglot APIとWasm言語の公開Maven版のリリース番号が一致しないため、Truffle側に合わせています）。

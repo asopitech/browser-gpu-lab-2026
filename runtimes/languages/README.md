@@ -42,6 +42,7 @@ Chicory（純Java）は `runtimes/java/README.md` の手順で、同じ `add(20,
 | AssemblyScript | Core Wasm (`add`) | Node.js loader / Wasmtime | 検証済み |
 | MoonBit | WASI Preview 1 | Node.js WASI / Wasmtime | 検証済み |
 | Go 1.27 | WASI Preview 1 | Wasmtime | 検証済み（2,480,138 bytes） |
+| TinyGo 0.42.0 | WASI Preview 1 | Wasmtime | 検証済み（446,399 bytes） |
 | Rust | wasm32-unknown-unknown | Wasmtime / wazero | 未検証（ターゲット未導入） |
 | Java | Core Wasm | Chicory 1.7.5 | 検証済み |
-| Java | Core Wasm | GraalWasm | 未検証（GraalVM未導入） |
+| Java | Core Wasm | GraalWasm 25.4.4.1.1 / Truffle 25.3.4.1 | 検証済み |

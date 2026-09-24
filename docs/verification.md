@@ -12,7 +12,9 @@
 | 2026-09-24 | MoonBit CLI / Node.js WASI | macOS | CPU | `labs/moonbit-browser` | WASM 5,079 bytesを生成し、`double(21)` の出力 `42` を確認 |
 | 2026-09-24 | Wasmtime 47.0.3 | macOS arm64 | CPU | `labs/moonbit-browser` | MoonBit生成のWASI Preview 1モジュールを実行し `42` を確認 |
 | 2026-09-24 | Go 1.27 / Wasmtime 47.0.3 | macOS arm64 | CPU | `labs/go-wasm` | 標準GoのWASI Preview 1モジュールを実行し `42` を確認（2,480,138 bytes） |
+| 2026-09-24 | TinyGo 0.42.0 / Wasmtime 47.0.3 | macOS arm64 | CPU | `labs/go-wasm` | TinyGoのWASI Preview 1モジュールを実行し `42` を確認（446,399 bytes） |
 | 2026-09-24 | Temurin 21.0.12.1 / Chicory 1.7.5 | macOS arm64 | CPU | `runtimes/java` | AssemblyScript生成Core WasmをJVM内で実行し `42` を確認 |
+| 2026-09-24 | GraalVM CE 25.4.4.1.1 / GraalWasm | macOS arm64 | CPU | `runtimes/java` | AssemblyScript生成Core WasmをPolyglot APIで実行し `42` を確認 |
 | 2026-09-24 | Rust 1.97 / wgpu 30.0.1 | macOS | Apple M3（Metal） | `labs/rust-wgpu` | ネイティブ実行で利用可能バックエンド `Metal` を確認 |
 
 ## 再現手順
