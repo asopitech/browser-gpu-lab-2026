@@ -1,0 +1,14 @@
+{
+  "name": "@browser-gpu-lab/assemblyscript-math",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "mkdir -p build && asc assembly/index.ts --target release --exportRuntime --outFile build/math.wasm --textFile build/math.wat",
+    "execute": "node scripts/run.mjs"
+  },
+  "devDependencies": {
+    "@assemblyscript/loader": "0.28.9",
+    "assemblyscript": "0.28.9"
+  }
+}
