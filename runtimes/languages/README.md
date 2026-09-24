@@ -13,6 +13,8 @@ wasmtime run --invoke add labs/assemblyscript-math/build/math-core.wasm 20 22
 
 結果: `42`（Wasmtime 47.0.3 / macOS arm64）。AssemblyScript側には `add(i32, i32)` のスカラーエクスポートを用意し、ランタイム依存を除いたCore Wasm版を生成しています。
 
+同じ `math-core.wasm` をWasmer、WasmEdge C API、wazeroでも実行し、すべて `42` を確認しました。
+
 ## MoonBit
 
 ```bash
@@ -21,7 +23,7 @@ moon build --target wasm --release
 wasmtime run _build/wasm/release/build/cmd/main/main.wasm
 ```
 
-結果: `42`（Wasmtime 47.0.3 / macOS arm64）。MoonBitのWASI Preview 1出力をNode.js WASIとWasmtimeの両方で実行します。
+結果: `42`（Wasmtime 47.0.3 / macOS arm64）。MoonBitのWASI Preview 1出力をNode.js WASI、Wasmtime、Wasmer、WasmEdge C API、wazeroで実行しました。
 
 ## Rust
 
@@ -29,20 +31,20 @@ Rustラボは現在ネイティブ `wgpu` を検証済みで、`wasm32-unknown-u
 
 ## Go
 
-`labs/go-wasm` で標準Goの `wasip1/wasm` を生成し、Wasmtimeで実行します。TinyGoはCLI未導入のため未検証です。
+`labs/go-wasm` で標準Goの `wasip1/wasm` を生成し、Wasmtime、Wasmer、WasmEdge C API、wazeroで `42` を確認しました。TinyGo 0.42.0も同じ4ランタイムで実行済みです。
 
 ## Java
 
-Chicory（純Java）は `runtimes/java/README.md` の手順で、同じ `add(20,22)` モジュールをJVM内で実行できます。GraalWasmはGraalVMのPolyglotランタイムが別途必要なため未検証です。
+Chicory（純Java）とGraalWasmは `runtimes/java/README.md` の手順で検証済みです。
 
-## 検証結果（2026-09-24）
+## 検証結果（2026-09-25）
 
 | 言語 | 生成形式 | 実行ランタイム | 状態 |
 | --- | --- | --- | --- |
 | AssemblyScript | Core Wasm (`add`) | Node.js loader / Wasmtime / Wasmer / WasmEdge C API / Chicory / GraalWasm | 検証済み |
-| MoonBit | WASI Preview 1 | Node.js WASI / Wasmtime | 検証済み |
-| Go 1.27 | WASI Preview 1 | Wasmtime | 検証済み（2,480,138 bytes） |
-| TinyGo 0.42.0 | WASI Preview 1 | Wasmtime | 検証済み（446,399 bytes） |
+| MoonBit | WASI Preview 1 | Node.js WASI / Wasmtime / Wasmer / WasmEdge C API / wazero | 検証済み |
+| Go 1.27 | WASI Preview 1 | Wasmtime / Wasmer / WasmEdge C API / wazero | 検証済み（2,480,138 bytes） |
+| TinyGo 0.42.0 | WASI Preview 1 | Wasmtime / Wasmer / WasmEdge C API / wazero | 検証済み（446,399 bytes） |
 | Rust | wasm32-unknown-unknown | Wasmtime / wazero | 未検証（ターゲット未導入） |
 | Java | Core Wasm | Chicory 1.7.5 | 検証済み |
 | Java | Core Wasm | GraalWasm 25.4.4.1.1 / Truffle 25.3.4.1 | 検証済み |

@@ -24,7 +24,7 @@ cd runtimes/wazero && go run .
 cd runtimes/wazero && go run . ../../labs/assemblyscript-math/build/math-core.wasm
 ```
 
-いずれも `42` を出力します。Wasmtimeは `--invoke add`、Wasmerは `--invoke add`、WasmEdgeは `--reactor add`、wazeroはGo APIの `ExportedFunction("add").Call` を使います。
+いずれも `42` を出力します。Wasmtimeは `--invoke add`、Wasmerは `--invoke add`、WasmEdgeはC APIホスト、wazeroはGo APIの `ExportedFunction("add").Call` を使います。WASIモジュールはWasmer CLI、WasmEdge WASI C API、wazeroのWASI Preview 1ホストで実行します。
 
 ## 検証状況（2026-09-25）
 
