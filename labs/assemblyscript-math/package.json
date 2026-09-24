@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "mkdir -p build && asc assembly/index.ts --target release --exportRuntime --outFile build/math.wasm --textFile build/math.wat",
+    "build": "mkdir -p build && asc assembly/index.ts --target release --exportRuntime --outFile build/math.wasm --textFile build/math.wat && asc assembly/index.ts --target release --outFile build/math-core.wasm --textFile build/math-core.wat",
     "execute": "node scripts/run.mjs"
   },
   "devDependencies": {

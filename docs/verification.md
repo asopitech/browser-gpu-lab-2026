@@ -8,7 +8,9 @@
 | 2026-09-24 | Google Chrome（WebGPU有効） | macOS | Apple M3（10コアGPU） | `apps/threejs-webgpu` | 回転する立方体を表示し、WebGPUバックエンドを使用中と画面に表示 |
 | 2026-09-24 | Google Chrome（WebGPU有効） | macOS | Apple M3（10コアGPU） | `apps/ai-webgpu` | 120 bytesのMatMulモデルを取得し、WebGPUで3×3出力を表示（102.20 ms） |
 | 2026-09-24 | AssemblyScript CLI / Node.js | macOS | CPU | `labs/assemblyscript-math` | WASM 5,077 bytesを生成し、入力の合計 `17` を確認 |
+| 2026-09-24 | Wasmtime 47.0.3 | macOS arm64 | CPU | `labs/assemblyscript-math` | AssemblyScript生成のCore Wasmを `add(20, 22)` で実行し `42` を確認 |
 | 2026-09-24 | MoonBit CLI / Node.js WASI | macOS | CPU | `labs/moonbit-browser` | WASM 5,079 bytesを生成し、`double(21)` の出力 `42` を確認 |
+| 2026-09-24 | Wasmtime 47.0.3 | macOS arm64 | CPU | `labs/moonbit-browser` | MoonBit生成のWASI Preview 1モジュールを実行し `42` を確認 |
 | 2026-09-24 | Rust 1.97 / wgpu 30.0.1 | macOS | Apple M3（Metal） | `labs/rust-wgpu` | ネイティブ実行で利用可能バックエンド `Metal` を確認 |
 
 ## 再現手順

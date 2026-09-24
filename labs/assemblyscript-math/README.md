@@ -15,10 +15,21 @@ corepack pnpm --filter @browser-gpu-lab/assemblyscript-math build
 corepack pnpm --filter @browser-gpu-lab/assemblyscript-math execute
 ```
 
-期待する出力は `合計: 17` です。
+期待する出力は `合計: 17` です。モジュールには、他のWASMランタイムから呼び出せる `add(20, 22)` エクスポートも含まれます。
 
 ## 生成物とサイズ
 
 - WASM: `labs/assemblyscript-math/build/math.wasm`
 - サイズ確認: `wc -c labs/assemblyscript-math/build/math.wasm` → **5,077 bytes（約4.96 KiB）**
 - `build/` は生成物のためGitへ登録しません。
+
+## スタンドアロンWASMランタイム
+
+AssemblyScriptが生成したCore Wasm版 `build/math-core.wasm` をWasmtimeで実行できます。
+
+```bash
+corepack pnpm --filter @browser-gpu-lab/assemblyscript-math build
+wasmtime run --invoke add labs/assemblyscript-math/build/math-core.wasm 20 22
+```
+
+期待する出力は `42` です。`math-core.wasm` はAssemblyScriptランタイムのimportを含まないCore Wasm版で、Node.jsのloader用 `math.wasm` とは別に、言語固有のランタイムを介さないWASMランタイムでも実行できることを確認します。

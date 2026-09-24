@@ -6,3 +6,8 @@ export function sum(pointer: usize, length: i32): f64 {
   }
   return total;
 }
+
+/** A scalar export used to run the language-produced module in standalone WASM runtimes. */
+export function add(left: i32, right: i32): i32 {
+  return left + right;
+}
