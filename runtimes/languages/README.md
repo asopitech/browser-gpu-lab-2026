@@ -33,7 +33,7 @@ Rustラボは現在ネイティブ `wgpu` を検証済みで、`wasm32-unknown-u
 
 ## Java
 
-記事で扱うChicory / GraalWasmは、JavaランタイムまたはGraalVMと依存関係の取得が必要です。この検証環境にはJava Runtime、Maven、Gradleがなく、まだ実行していません。Java環境を用意した後、同じ `add(20,22)` モジュールをChicory（純Java）とGraalWasm（Polyglot API）で実行するのが次の作業です。
+Chicory（純Java）は `runtimes/java/README.md` の手順で、同じ `add(20,22)` モジュールをJVM内で実行できます。GraalWasmはGraalVMのPolyglotランタイムが別途必要なため未検証です。
 
 ## 検証結果（2026-09-24）
 
@@ -43,4 +43,5 @@ Rustラボは現在ネイティブ `wgpu` を検証済みで、`wasm32-unknown-u
 | MoonBit | WASI Preview 1 | Node.js WASI / Wasmtime | 検証済み |
 | Go 1.27 | WASI Preview 1 | Wasmtime | 検証済み（2,480,138 bytes） |
 | Rust | wasm32-unknown-unknown | Wasmtime / wazero | 未検証（ターゲット未導入） |
-| Java | Core Wasm | Chicory / GraalWasm | 未検証（Java実行環境未導入） |
+| Java | Core Wasm | Chicory 1.7.5 | 検証済み |
+| Java | Core Wasm | GraalWasm | 未検証（GraalVM未導入） |
