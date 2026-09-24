@@ -12,7 +12,11 @@ func main() {
 	ctx := context.Background()
 	runtime := wazero.NewRuntime(ctx)
 	defer runtime.Close(ctx)
-	wasm, err := os.ReadFile("../common/add.wasm")
+	modulePath := "../common/add.wasm"
+	if len(os.Args) > 1 {
+		modulePath = os.Args[1]
+	}
+	wasm, err := os.ReadFile(modulePath)
 	if err != nil {
 		panic(err)
 	}

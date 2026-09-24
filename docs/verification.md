@@ -15,6 +15,7 @@
 | 2026-09-24 | TinyGo 0.42.0 / Wasmtime 47.0.3 | macOS arm64 | CPU | `labs/go-wasm` | TinyGoのWASI Preview 1モジュールを実行し `42` を確認（446,399 bytes） |
 | 2026-09-24 | Temurin 21.0.12.1 / Chicory 1.7.5 | macOS arm64 | CPU | `runtimes/java` | AssemblyScript生成Core WasmをJVM内で実行し `42` を確認 |
 | 2026-09-24 | GraalVM CE 25.4.4.1.1 / GraalWasm | macOS arm64 | CPU | `runtimes/java` | AssemblyScript生成Core WasmをPolyglot APIで実行し `42` を確認 |
+| 2026-09-25 | Wasmer 7.4.2 / WasmEdge 0.17.1 | macOS arm64 | CPU | `runtimes/common` / `runtimes/wasmedge` | 共通Core WasmをWasmer CLIとWasmEdge C APIで実行し、いずれも `42` を確認 |
 | 2026-09-24 | Rust 1.97 / wgpu 30.0.1 | macOS | Apple M3（Metal） | `labs/rust-wgpu` | ネイティブ実行で利用可能バックエンド `Metal` を確認 |
 
 ## 再現手順
