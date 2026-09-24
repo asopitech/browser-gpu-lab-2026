@@ -16,7 +16,7 @@ moon build --target wasm --release
 node scripts/run.mjs
 ```
 
-期待する出力は `42` です。`scripts/run.mjs` は生成されたWASMの `wasi_snapshot_preview1.fd_write` をNode.js `WASI`でホストします。ブラウザから直接呼ぶ場合は、同じWASI importを提供するブラウザ用WASI実装へ差し替えてください。
+期待する出力は `42` です。`scripts/run.mjs` は生成されたWASMの `wasi_snapshot_preview1.fd_write` をNode.js `WASI`でホストします。ブラウザ直接実行用のWASIアダプターは未実装で、現状はNode.jsホストでの検証範囲です。
 
 ## 生成物とサイズ
 

@@ -11,9 +11,9 @@ WebページのJavaScriptがGPU上で動くWGSL関数、GPUバッファ、実行
 | WebGPUの基本 | `apps/webgpu-basics` | WGSL、`GPUBuffer`、bind group、compute pipeline、結果の読み取り | 第2章 |
 | 3D | `apps/threejs-webgpu` | Three.jsのWebGPUレンダラーによる3D描画 | 第4章 |
 | AI推論 | `apps/ai-webgpu` | ONNX Runtime WebまたはTransformers.jsによるWebGPU推論 | 第4章 |
-| MoonBit | `labs/moonbit-browser` | MoonBitで生成したWASMをブラウザから呼び出す | 第5章 |
+| MoonBit | `labs/moonbit-browser` | MoonBitで生成したWASMをNode.js WASIホストから呼び出す（ブラウザアダプターは未実装） | 第5章 |
 | AssemblyScript | `labs/assemblyscript-math` | 数値計算をWASMモジュールへ分ける | 第5章 |
-| Rust | `labs/rust-wgpu` | `wgpu`によるブラウザ・ネイティブ共有コード | 第4・5章 |
+| Rust | `labs/rust-wgpu` | `wgpu`によるネイティブ・ブラウザ共有コード（wasm32ターゲットは環境依存） | 第4・5章 |
 | WASMランタイム | `runtimes` | Wasmtime、Wasmer、WasmEdgeなどでWASMを実行する | 第3章 |
 
 各ラボは単独でビルド・実行できる構成にします。未実装のラボには目的と導入手順を記したREADMEを置き、動作する実装を順に追加します。

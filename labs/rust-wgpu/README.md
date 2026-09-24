@@ -25,6 +25,8 @@ wasm-bindgen target/wasm32-unknown-unknown/release/rust_wgpu_lab.wasm --target w
 
 生成WASMは `target/wasm32-unknown-unknown/release/rust_wgpu_lab.wasm` です。サイズ確認は `wc -c` で行います。`target/` と `pkg/` は生成物のためGitへ登録しません。
 
+この環境のHomebrew版Rustには `wasm32-unknown-unknown` の標準ライブラリが入っていないため、2026-09-24時点ではブラウザ向けビルドは未検証です。`rustup target add wasm32-unknown-unknown` 後に上記コマンドを再実行してください。
+
 ## 現在の検証範囲
 
 共有Rustコードとネイティブビルドを優先して実装しています。WebGPUキャンバスへの描画パイプラインは次の拡張で追加します。
